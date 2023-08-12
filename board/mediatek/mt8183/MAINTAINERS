@@ -2,3 +2,4 @@ MT8183 Kukui Jacuzzi Kappa
 M: Aneesh Lingala <aneeshlingala61@gmail.com>
 S: Maintained
 F: configs/mt8183_kukui_jacuzzi_kappa_defconfig
+F: board/mediatek/mt8183

@@ -11,9 +11,7 @@ DECLARE_GLOBAL_DATA_PTR;
 
 int board_init(void)
 {
-	/* address of boot parameters */
-	gd->bd->bi_boot_params = CFG_SYS_SDRAM_BASE;
-  
+        printf("U-Boot for Google Kukui Jacuzzi Kappa");
 	return 0;
 }
 

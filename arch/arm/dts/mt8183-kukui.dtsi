@@ -8,7 +8,6 @@
 #include <dt-bindings/gpio/gpio.h>
 #include <dt-bindings/input/input.h>
 #include "mt8183.dtsi"
-#include "mt6358.dtsi"
 
 / {
 	aliases {
@@ -225,42 +224,6 @@
 	status = "okay";
 };
 
-&cci {
-	proc-supply = <&mt6358_vproc12_reg>;
-};
-
-&cpu0 {
-	proc-supply = <&mt6358_vproc12_reg>;
-};
-
-&cpu1 {
-	proc-supply = <&mt6358_vproc12_reg>;
-};
-
-&cpu2 {
-	proc-supply = <&mt6358_vproc12_reg>;
-};
-
-&cpu3 {
-	proc-supply = <&mt6358_vproc12_reg>;
-};
-
-&cpu4 {
-	proc-supply = <&mt6358_vproc11_reg>;
-};
-
-&cpu5 {
-	proc-supply = <&mt6358_vproc11_reg>;
-};
-
-&cpu6 {
-	proc-supply = <&mt6358_vproc11_reg>;
-};
-
-&cpu7 {
-	proc-supply = <&mt6358_vproc11_reg>;
-};
-
 &dsi0 {
 	status = "okay";
 	#address-cells = <1>;
@@ -294,10 +257,6 @@
 
 &gic {
 	mediatek,broken-save-restore-fw;
-};
-
-&gpu {
-	mali-supply = <&mt6358_vgpu_reg>;
 };
 
 &i2c0 {
@@ -837,14 +796,6 @@
 	};
 };
 
-&mfg_async {
-	domain-supply = <&mt6358_vsram_gpu_reg>;
-};
-
-&mfg {
-	domain-supply = <&mt6358_vgpu_reg>;
-};
-
 &soc_data {
 	status = "okay";
 };
@@ -948,13 +899,6 @@
 	status = "disabled";
 };
 
-&ssusb {
-	dr_mode = "host";
-	wakeup-source;
-	vusb33-supply = <&mt6358_vusb_reg>;
-	status = "okay";
-};
-
 &thermal_zones {
 	tboard1 {
 		polling-delay = <1000>; /* milliseconds */
@@ -996,17 +940,5 @@
 		enable-gpios = <&pio 120 0>;
 		clocks = <&clk32k>;
 		firmware-name = "nvm_00440302_i2s.bin";
-	};
-};
-
-&usb_host {
-	#address-cells = <1>;
-	#size-cells = <0>;
-	vusb33-supply = <&mt6358_vusb_reg>;
-	status = "okay";
-
-	hub@1 {
-		compatible = "usb5e3,610";
-		reg = <1>;
 	};
 };

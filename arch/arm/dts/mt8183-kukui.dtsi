@@ -1010,5 +1010,3 @@
 		reg = <1>;
 	};
 };
-
-#include <arm/cros-ec-sbs.dtsi>
